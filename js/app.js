@@ -1,6 +1,8 @@
 const r = require("react");
 const rd = require("react-dom");
 
+const FluxCartApp = require("./components/FluxCartApp");
+
 const e = r.createElement;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -8,5 +10,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function App() {
-  return e("div", { className: "App" }, "testing");
+  return e("div", { className: "App" }, e(FluxCartApp));
 }
