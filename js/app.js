@@ -1,5 +1,6 @@
-const r = React;
-const rd = ReactDOM;
+const r = require("react");
+const rd = require("react-dom");
+
 const e = r.createElement;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -7,5 +8,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function App() {
-  return e("div", {}, "testing");
+  return e("div", { className: "App" }, "testing");
 }
