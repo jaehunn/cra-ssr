@@ -1,8 +1,21 @@
 const r = require("react");
+const Actions = require("../actions/FluxCartActions");
 
 const e = r.createElement;
 
 function FluxProduct() {
+  // handler
+  // closeCart
+  const closeCart = () => {};
+
+  // openCart
+  const openCart = () => {};
+
+  // removeFromCart
+  const removeFromCart = () => {
+    return;
+  };
+
   return e(
     "div",
     { className: "flux-product" },
