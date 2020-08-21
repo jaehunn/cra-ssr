@@ -2,10 +2,10 @@ const r = require("react");
 
 const e = r.createElement;
 
-function FluxCart() {
+function FluxCart({ items, count, total, visible }) {
   return e(
     "div",
-    { className: "flux-cart" },
+    { className: `flux-cart ${this.props.visible && "active"}` },
     e(
       "div",
       { className: "mini-cart" },
@@ -16,7 +16,7 @@ function FluxCart() {
         e(
           "li",
           {},
-          e("h1", { className: "name" }, "name"),
+          e("h1", { className: "name" }, items[0].name),
           e("p", { className: "type" }, "type x quantity"),
           e("p", { className: "price" }, "price x quantity"),
           e("button", { className: "remove-item" }, "Remove")

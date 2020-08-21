@@ -5,20 +5,14 @@ const FluxProduct = require("./FluxProduct");
 
 const e = r.createElement;
 
-// store get
-const getCartState = () => {
-  return {
-    product:
-    selectedProduct:
-    cartItems: 
-    cartCount:
-    cartTotal:
-    cartVisible:
-  }
-}
-
 function FluxCartApp() {
-  const [state, setState] = r.useState(getCartState());
+  // get state
+  const [product, setProduct] = r.useState("product");
+  const [selected, setSelected] = r.useState("selected");
+  const [items, setItems] = r.useState("items");
+  const [count, setCount] = r.useState("count");
+  const [total, setTotal] = r.useState("total");
+  const [visible, setVisible] = r.useState("visible");
 
   r.useEffect(() => {
     // addChangeListener (product, cart)
@@ -27,7 +21,12 @@ function FluxCartApp() {
     };
   }, []);
 
-  return e("div", { className: "flux-cart-app" }, e(FluxCart), e(FluxProduct));
+  return e(
+    "div",
+    { className: "flux-cart-app" },
+    e(FluxCart, { items, count, total, visible }),
+    e(FluxProduct, { product, items, selected })
+  );
 }
 
 module.exports = FluxCartApp;
